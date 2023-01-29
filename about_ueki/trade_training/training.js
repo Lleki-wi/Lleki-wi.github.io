@@ -918,7 +918,7 @@ function end() {
             confirm_message = "最終結果を表示します"
         }
         if (window.confirm(confirm_message) == 1) {
-            let url = "result.html?"
+            let url = "result?"
             let param = [
                 "code", code,
                 "incname", incname[code],

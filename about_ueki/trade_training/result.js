@@ -10,7 +10,7 @@ function getParam(name) {
 
 function jump_start() {
     if (confirm("スタート画面に戻ります") == true) {
-        window.location.href = "training.html"
+        window.location.href = "training"
     }
 }
 
