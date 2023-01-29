@@ -1,0 +1,46 @@
+html, body {
+    font-family: "メイリオ", "Meiryo", sans-serif;
+    font-size: 16px;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+h3 {
+    font-size: 140%;
+}
+.center {
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    column-gap: 40px;
+    grid-auto-rows: auto;
+}
+
+.box {
+    position: relative;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px;
+    height: 250px;
+    border: solid 2px #000000;
+}
+.box_thin {
+    position: relative;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px;
+    height: 140px;
+    border: solid 2px #000000;
+}
+.link {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

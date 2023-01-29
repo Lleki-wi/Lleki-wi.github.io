@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ダイスロールツール - UekiTRPG</title>
+        <link rel="stylesheet" href="diceroll.css">
+    </head>
+    <body>
+        <h2 class="center">ダイスロールツール</h2>
+        <p id="default_rolls">
+            <input type="text" id="ds1" name="ds" placeholder="1D100" class="def_rolls" disabled>
+            <button id="de1" name="de" class="exect" onclick="rolldef(1, 100, 1)">実行</button>
+            　
+            <input type="text" id="dr1" name="dr" placeholder="結果" class="result" value="" disabled>
+
+            <br><br>
+
+            <input type="text" id="ds2" name="ds" placeholder="1D4" class="def_rolls" disabled>
+            <button id="de2" name="de" class="exect" onclick="rolldef(1, 4, 2)">実行</button>
+            　
+            <input type="text" id="dr2" name="dr" placeholder="結果" class="result" value="" disabled>
+
+            <br><br>
+
+            <input type="text" id="ds3" name="ds" placeholder="1D6" class="def_rolls" disabled>
+            <button id="de3" name="de" class="exect" onclick="rolldef(1, 6, 3)">実行</button>
+            　
+            <input type="text" id="dr3" name="dr" placeholder="結果" class="result" value="" disabled>
+
+            <br><br>
+            
+            <input type="text" id="ds4" name="ds" placeholder="1D8" class="def_rolls" disabled>
+            <button id="de4" name="de" class="exect" onclick="rolldef(1, 8, 4)">実行</button>
+            　
+            <input type="text" id="dr4" name="dr" placeholder="結果" class="result" value="" disabled>
+
+            <br><br>
+            
+            <input type="text" id="ds5" name="ds" placeholder="1D10" class="def_rolls" disabled>
+            <button id="de5" name="de" class="exect" onclick="rolldef(1, 10, 5)">実行</button>
+            　
+            <input type="text" id="dr5" name="dr" placeholder="結果" class="result" value="" disabled>
+
+            <br><br>
+            
+            <input type="text" id="ds6" name="ds" placeholder="1D12" class="def_rolls" disabled>
+            <button id="de6" name="de" class="exect" onclick="rolldef(1, 12, 6)">実行</button>
+            　
+            <input type="text" id="dr6" name="dr" placeholder="結果" class="result" value="" disabled>
+
+            <br><br>
+
+            <input type="text" id="ds7" name="ds" placeholder="1D20" class="def_rolls" disabled>
+            <button id="de7" name="de" class="exect" onclick="rolldef(1, 20, 7)">実行</button>
+            　
+            <input type="text" id="dr7" name="dr" placeholder="結果" class="result" value="" disabled>
+
+            <br><br>
+        </p>
+        <h2>カスタムダイスロール</h2>
+        入力例：<b>1D3+1D4-1</b><br>
+        Dの代わりにd, %, @を使用しても動作します<br>
+        <p id="user_rolls">
+            <input type="text" id="s1" name="s" placeholder="入力" class="rolls">
+            <button id="e1" name="e" class="exect" onclick="roll(1)">実行</button>
+            　
+            <input type="text" id="rr1" name="rr" placeholder="出目" class="roll_results" value="" disabled>
+            <input type="text" id="r1" name="dr" placeholder="結果" class="result" value="" disabled>
+            
+            <br><br>
+
+            <input type="text" id="s2" name="s" placeholder="入力" class="rolls">
+            <button id="e2" name="e" class="exect" onclick="roll(2)">実行</button>
+            　
+            <input type="text" id="rr2" name="rr" placeholder="出目" class="roll_results" value="" disabled>
+            <input type="text" id="r2" name="dr" placeholder="結果" class="result" value="" disabled>
+                        
+            <br><br>
+
+            <input type="text" id="s3" name="s" placeholder="入力" class="rolls">
+            <button id="e3" name="e" class="exect" onclick="roll(3)">実行</button>
+            　
+            <input type="text" id="rr3" name="rr" placeholder="出目" class="roll_results" value="" disabled>
+            <input type="text" id="r3" name="rr" placeholder="結果" class="result" value="" disabled>
+        </p>
+        <h3>ダイスログ</h3>
+        日時 : ロール内容 : 出目 : 結果<br>
+        <textarea id="logs" name="logs" rows="10" cols="50" disabled></textarea>
+        <footer>
+            <br>
+            <a href="index.html">&lt;&nbsp;TRPGtools一覧に移動</a>
+        </footer>
+        <script type="text/javascript" src="diceroll.js"></script>
+    </body>
+</html>

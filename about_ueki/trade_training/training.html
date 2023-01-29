@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <meta charset="utf-8" id="meta" name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>テクニカル分析練習ツール - UekiTA</title>
+        <link rel="stylesheet" href="training.css">
+    </head>
+    <body>
+        <div id="start_html">
+            <h2 class="center">テクニカル分析の練習用ツール</h2>
+            <p class="center">
+            <b>
+                ※スマートフォン・タブレットには未対応ですが、<br>
+                PC版表示に切り替えることで正常に動作します
+            </b>
+            </p>
+            株価などのデータファイル（csv）を選択してください<br>
+            <input type="file" id="filedata" accept="text/csv">
+            <br>
+            <div id="csv_error">　</div>
+            <br><br>
+            開始日を入力してください&nbsp;<b>例：420</b>
+            <br>
+            -1と入力すると特定の範囲内からランダムで選択されます
+            <br>
+            <input type="text" id="since_input" class="start_control" style="text-align: center;" placeholder="-1" onchange="change_since()" disabled>
+            <div id="since_error">　</div>
+            <br>
+            <button id="start" class="start_control" disabled>開始</button>
+            <br><br><br>
+            <a href="../works.html">&lt;&nbsp;worksに移動</a>
+        </div>
+
+        <div id="training_html" style="display: none;">
+            <h2 class="center">テクニカル分析の練習用ツール</h2>
+            <canvas id="canvas"></canvas>
+            <div id="inc_text">0000 企業名 0000/0/0（0）〜</div>
+            <div id="log_text" style="text-align: center;">　</div>
+            <div class="container">
+                <div id="left">
+                    <div id="date_text">0日目 0000/0/0</div>
+                    <div id="market_text">時価　　：0円</div>
+                    <div id="unrealized_text">含み損益：0円（0%）</div>
+                    <div id="cash_text">現金残高：0円</div>
+                    <div id="profit_text">損益　　：0円（0%）</div>
+                    <div id="holding_text">保有株数：0</div>
+                    <br>
+                    <button id="buy" class="control" onclick="trade_set(100)">書い</button>
+                    <button id="sell" class="control" onclick="trade_set(-100)">売り</button>
+                    <input type="text" id="buysell_sum" class="control" value="0" disabled>
+                    <br><br>
+                    <button id="next" class="control" onclick="next(code)">進む</button>
+                    <br><br>
+                    <button id="end" class="control" onclick="end()">終了</button>
+                    <br><br>
+                    <input type="checkbox" id="change_HLtradetag" name="change_HLtradetag" value="on" onclick="change_HLtradetagflag()"><label for="change_HLtradetag">売買タグを強調表示</label>
+                    <br>
+                    <textarea id="tradelog_area" rows="10" style="width: 240px;" disabled></textarea>
+                </div>
+                <div id="right" class="right">
+                    <input type="checkbox" id="movingroot" value="on" onclick="changemoving('root')" checked><label for="movingroot">移動平均線</label>
+                    <br>
+                    <input type="checkbox" id="moving5" value="on" onclick="changemoving(5)" checked><label for="moving5" style="color: red">5日</label>
+                    <input type="checkbox" id="moving20" value="on" onclick="changemoving(20)" checked><label for="moving20" style="color: blue">20日</label>
+                    <input type="checkbox" id="moving60"60value="on" onclick="changemoving(60)" checked><label for="moving60" style="color: green">60日</label><br>
+                    <input type="checkbox" id="moving100" value="on" onclick="changemoving(100)"><label for="moving100" style="color: orange">100日</label>
+                    <input type="checkbox" id="moving300" value="on" onclick="changemoving(300)"><label for="moving300" style="color: black">300日</label><br>
+                    <br>
+                    <input type="checkbox" id="bollingerroot" value="on" onclick="changebollinger('root')" checked><label for="bollingerroot">ボリンジャーバンド</label>
+                    <br>
+                    <input type="checkbox" id="bollinger1" value="on" onclick="changebollinger(1)" checked><label for="bollinger1" style="color: springgreen">±1σ</label>
+                    <input type="checkbox" id="bollinger2" value="on" onclick="changebollinger(2)" checked><label for="bollinger2" style="color: sandybrown">±2σ</label>
+                    <input type="checkbox" id="bollinger3" value="on" onclick="changebollinger(3)"><label for="bollinger3" style="color: skyblue">±3σ</label>
+                </div>
+    
+            </container>    
+        </div>
+        <script type="text/javascript" src="training.js"></script>
+    </body>
+</html>

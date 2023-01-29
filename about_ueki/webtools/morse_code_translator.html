@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>モールス信号変換ツール - UekiWT</title>
+        <link rel="stylesheet" href="morse_code_translator.css">
+    </head>
+    <body>
+        <h2 class="center">
+            モールス信号とアルファベット/ひらがなの相互変換ツール
+        </h2>
+        <p class="center">
+            <b>既定値</b>　長音：<b>_</b>　短音：<b>.</b>　区切り：<b>半角スペース</b><br>
+            変換不可能な箇所は<b> \該当箇所\ </b>のように表示されます
+        </p>
+        
+        <p id="settings">
+            <input type="text" id="long" name="long" placeholder="長音" oninput="change_set()" class="setting">
+            <input type="text" id="short" name="short" placeholder="短音" oninput="change_set()" class="setting">
+            <input type="text" id="delimiter" name="delimiter" placeholder="区切り" oninput="change_set()" class="setting">
+            <input type="radio" id="select_alph" name="char_select" value="alph" oninput="change_set()" checked><label for="select_alph">アルファベット</label>
+            <input type="radio" id="select_kana" name="char_select" value="kana" oninput="change_set()" ><label for="select_kana">ひらがな</label>
+            <input type="checkbox" id="capslock_flag" name="capslock_box" oninput="change_set()"><label for="capslock_flag">大文字/カタカナ</label>
+        </p>
+
+        <p id="morse_to_char">
+            <h4>モールス信号→アルファベット/ひらがな</h4>
+            <textarea id="input_morse" name="input_morse" rows="6" cols="55" placeholder="指定した文字でモールス信号を入力してください" oninput="changemorse()"></textarea>
+            <textarea id="output_char" name="output_char" rows="6" cols="55" placeholder="結果が出力されます" style="color: #1a1a1a;" disabled></textarea>
+        </p>
+
+        <p id="char_to_morse">
+            <h4>アルファベット/ひらがな→モールス信号</h4>
+            <textarea id="input_char" name="input_char" rows="6" cols="55" placeholder="文字列を入力してください" oninput="changechar()"></textarea>
+            <textarea id="output_morse" name="output_morse" rows="6" cols="55" placeholder="結果が出力されます" style="color: #1a1a1a;" disabled></textarea>
+            </p>
+        <footer>
+            <br>
+            <a href="index.html">&lt;&nbsp;webtools一覧に移動</a>
+        </footer>
+        <script type="text/javascript" src="morse_code_translator.js"></script>
+    </body>
+</html>

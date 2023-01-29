@@ -1,0 +1,99 @@
+html, body {
+    font-family: "メイリオ", "Meiryo", sans-serif;
+    font-size: 16px;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+ul {
+    padding-left: 20px;
+}
+.htitle {
+    margin-top: 0%;
+    text-align: center;
+}
+.center {
+    text-align: center;
+}
+.widebr {
+    display: block;
+    content: "";
+    height: 16px;
+}
+.narrowbr {
+    display: block;
+    content: "";
+    height: 10px;
+}
+.morenarrowbr {
+    display: block;
+    content: "";
+    height: 6px;
+}
+.control {
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    vertical-align : top;
+}
+.selectbox {
+    width: 120px;
+    height: 30px;
+    text-align: center;
+}
+.wideselectbox {
+    width: 160px;
+    height: 30px;
+    text-align: center;
+}
+.widebox {
+    width: 140px;
+    height: 30px;
+    text-align: center;
+    vertical-align : top;
+}
+.input_max {
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    vertical-align : top;
+}
+.area {
+    float: left;
+    width: 400px;
+    height: auto;
+}
+.scroll {
+    width: 250px;
+    max-height: 140px;
+    overflow: auto;
+}
+.widescroll {
+    width: 380px;
+    height: 660px;
+    overflow: auto;
+}
+.status_area {
+    float: left;
+    width: 70px;
+    height: 60px;
+    text-align: center;
+    vertical-align : top;
+    overflow: visible;
+    font-size: 14px;
+}
+.sabr {
+    display: block;
+    content: "";
+    height: 60px;   
+}
+.areabr {
+    display: block;
+    content: "";
+    height: 500px;
+}
+.formula_elem {
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    vertical-align : top;
+}

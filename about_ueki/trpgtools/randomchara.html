@@ -1,0 +1,217 @@
+<html>
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CoCキャラクター自動生成ツール - UekiTRPG</title>
+        <link rel="stylesheet" href="randomchara.css">
+    </head>
+    <body>
+        <h2 class="htitle">CoCキャラクター自動生成ツール</h2>
+        <p class="center">
+            本ツールはクトゥルフ神話TRPGをプレイする際の補助を目的としております。<br>
+            クトゥルフ神話TRPGの公式ルールブック（<a href="https://product.kadokawa.co.jp/p01/product-c/301401001110.html" target="_blank" rel="noopener noreferrer">旧版</a>もしくは<a href="https://product.kadokawa.co.jp/p01/product-c/321908000360.html" target="_blank" rel="noopener noreferrer">新版</a>）または<a href="https://product.kadokawa.co.jp/cthulhu/app/" target="_blank" rel="noopener noreferrer">公式アプリ</a>のサブスクリプションをご購入の上でご利用下さい。<br>
+            <br>
+            <b>
+            本作は、「株式会社アークライト」及び「株式会社KADOKAWA」が権利を有する『クトゥルフ神話TRPG』の二次創作物です。<br>
+            Call of Cthulhu is copyright ©1981, 2015, 2019 by Chaosium Inc. ;all rights reserved. Arranged by Arclight Inc.<br>
+            Call of Cthulhu is a registered trademark of Chaosium Inc.<br>
+            PUBLISHED BY KADOKAWA CORPORATION　「クトゥルフ神話TRPG」
+            </b>
+        </p>
+        <br>
+        <div style="max-width: 300%;">
+            <div class="area" style="min-height: 400px;">
+                <p id="houserule">
+                    <h3>ハウスルール</h3>
+                    <input type="checkbox" id="rule_dodge" onchange="able_skill('回避', this.checked)" checked><label for="rule_dodge">回避にポイントを割り振ることができる</label><br>
+                    <input type="checkbox" id="rule_protect" onchange="able_skill('かばう', this.checked)"><label for="rule_protect">かばう技能（初期値：DEX×3）の採用</label>
+                </p>
+                <br>
+                職業　
+                <select id="occupation" class="selectbox">
+                    <option value="ランダム" selected>ランダム</option>
+                </select>
+                <br class="widebr">
+                およその傾向　
+                <select id="tendency" class="selectbox">
+                    <option value="ランダム">ランダム</option>
+                    <option value="なし">なし</option>
+                    <option value="回復系">回復系</option>
+                    <option value="戦闘系">戦闘系</option>
+                    <option value="対人系">対人系</option>
+                    <option value="探索系">探索系</option>
+                    <option value="ソロ探索者">ソロ探索者</option>
+                </select>
+                <br class="widebr">
+                配分の偏り　
+                <select id="bias" class="selectbox">
+                    <option value="ランダム">ランダム</option>
+                    <option value="弱い">弱い</option>
+                    <option value="普通">普通</option>
+                    <option value="強い">強い</option>
+                </select>
+                <br class="widebr">
+                職業技能値上限　
+                <input type="text" id="occu_max" class="input_max" placeholder="85">
+                <br class="widebr">
+                趣味技能値上限　
+                <input type="text" id="hobby_max" class="input_max" placeholder="70">
+            </div>
+            <div class="area" style="width: auto; min-height: 250px;">
+                <div class="area">
+                    <br class="narrowbr">
+                    追加技能　<a href="#detail_ex">詳細</a><br>
+                    <input type="text" id="exskill" class="wideselectbox" placeholder="技能名">
+                    <input type="text" id="exskill_init" class="input_max" placeholder="初期値">
+                    <button id="append_exskill" class="control" onclick="append_exskill()">追加</button>
+                    <br class="narrowbr">
+                    <div id="exskill_list" class="scroll" style="width: 300px; max-height: 380px;"></div><br class="narrowbr">
+                </div>
+                <div class="area">
+                    <br class="narrowbr">
+                    推奨技能<br>
+                    <select id="recommend" class="wideselectbox"></select>　
+                    <button id="append_rec" class="control" onclick="append_rec()" disabled>追加</button>
+                    <br class="narrowbr">
+                    <div id="rec_list" class="scroll"></div><br class="narrowbr">
+                    準推奨技能<br>
+                    <select id="semirecommend" class="wideselectbox"></select>　
+                    <button id="append_semirec" class="control" onclick="append_semirec()" disabled>追加</button>
+                    <br class="narrowbr">
+                    <div id="semirec_list" class="scroll"></div>
+                </div>
+            </div>
+            <br style="clear: left;"><br>
+            <button id="generate" class="control" onclick="generation()" disabled>生成</button><br class="narrowbr">
+            <div style="width: auto; min-height: 700px; float: left;">
+                <div class="area" style="height: 420px;">
+                    <div id="overview_setting">No.　</div>
+                    <div id="max_ocp">最大職業技能値：</div>
+                    <div id="max_hbp">最大趣味技能値：</div>
+                    <div id="bias_name">配分の偏り：</div><br>
+                    <div class="status_area">
+                        STR<br>
+                        <input type="text" id="STR_box" class="input_max" disabled>
+                    </div>
+                    <div class="status_area">
+                        CON<br>
+                        <input type="text" id="CON_box" class="input_max" disabled>
+                    </div>
+                    <div class="status_area">
+                        DEX<br>
+                        <input type="text" id="DEX_box" class="input_max" disabled>
+                    </div>
+                    <div class="status_area">
+                        APP<br>
+                        <input type="text" id="APP_box" class="input_max" disabled>
+                    </div>
+                    <div class="status_area">
+                        POW<br>
+                        <input type="text" id="POW_box" class="input_max" disabled>
+                    </div>
+                    <br class="sabr">
+                    <div class="status_area">
+                        SIZ<br>
+                        <input type="text" id="SIZ_box" class="input_max" disabled>
+                    </div>
+                    <div class="status_area">
+                        INT<br>
+                        <input type="text" id="INT_box" class="input_max" disabled>
+                    </div>
+                    <div class="status_area">
+                        EDU<br>
+                        <input type="text" id="EDU_box" class="input_max" disabled>
+                    </div>
+                    <br class="sabr">
+                    <div class="status_area" style="width: 210px">
+                        年収/財産<br>
+                        <input type="text" id="INC_box" class="input_max" style="width: 200px;" disabled>
+                    </div>
+                    <br class="sabr">
+                    <div class="status_area">
+                        HP<br>
+                        <input type="text" id="HP_box" class="input_max" disabled>
+                    </div>
+                    <div class="status_area">
+                        MP<br>
+                        <input type="text" id="MP_box" class="input_max" disabled>
+                    </div>
+                    <div class="status_area">
+                        SAN<br>
+                        <input type="text" id="SAN_box" class="input_max" disabled>
+                    </div>
+                    <div class="status_area">
+                        DB<br>
+                        <input type="text" id="DB_box" class="input_max" disabled>
+                    </div>
+                    <br class="sabr">
+                    <div class="status_area">
+                        幸運<br>
+                        <input type="text" id="LUCK_box" class="input_max" disabled>
+                    </div>
+                    <div class="status_area">
+                        アイディア<br>
+                        <input type="text" id="IDEA_box" class="input_max" disabled>
+                    </div>
+                    <div class="status_area">
+                        知識<br>
+                        <input type="text" id="KNOWLEDGE_box" class="input_max" disabled>
+                    </div>
+                </div>
+                <div class="area">
+                    <br class="narrowbr">
+                    取得技能<br class="narrowbr">
+                    <input type="text" class="widebox" value="技能名" disabled> <input type="text" class="input_max" value="技能値" disabled>　<input type="text" class="formula_elem" value="初p" disabled> <input type="text" class="formula_elem" value="職p" disabled> <input type="text" class="formula_elem" value="趣p" disabled>
+                    <br class="narrowbr">
+                    <div id="acqskill_list" class="widescroll">
+                        <div id="acqskill_listblock"></div>
+                    </div>
+                    <br class="narrowbr">
+                </div>
+            </div>
+            <div class="area" style="height: auto;">
+                <br class="widebr">
+                <h3>生成ログ</h3>
+                <textarea id="result" placeholder="ログが出力されます" style="width: 368px; height: 410px;" disabled></textarea>
+                <br>
+                技能値後ろの式は<br>
+                <b>初期値</b> + <b>職業技能ポイント</b> + <b>趣味技能ポイント</b><br>
+                または<br>
+                <b>初期値</b> + <b>趣味技能ポイント</b><br>
+                です
+                <br>
+            </div>
+            <div id="detail_ex" style="clear: left;">
+                <br>
+                <h3>追加技能の詳細</h3>
+                <ul style="padding-left: 25px;">
+                    <li>技能名について
+                        <ul>
+                            <li>入力にスペース, アンダーバーは使用できません</li>
+                            <li>芸術や外国語などの分野を選択する技能について、芸術（絵画）や外国語（ラテン語）などを追加することで分野を特定することができます</li>
+                            <li>末尾に（任意）と付けると複数回選択される場合があります<br>
+                            例：<b>宗教（任意）</b></li>
+                            <li>括弧を使用する場合、一組のみかつ正しく閉じている必要があります<br>
+                                例：<b>体当たり</b>, <b>芸術（絵画）</b>, <b>スポーツ(任意)</b><br>
+                            </li>
+                            <li>出力時、技能名の前に ＊ が付きます<br>
+                            例：<b>＊体当たり</b>, <b>＊芸術（絵画）</b>, <b>＊スポーツ（任意）</b></li>
+                        </ul>
+                    </li>
+                    <li>初期値について
+                        <ul>
+                            <li>1〜99の半角数字を入力することができます<br>
+                                例：<b>25</b>, <b>50</b>, <b>1</b></li>
+                                <li>ステータスと定数を乗算する式も入力可能であり、定数は1の場合省略することができます<br>
+                                例：<b>STR</b>(=STR*1),&nbsp;<b>5*APP</b>,&nbsp;<b>int*3</b></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+            <br>
+            <a href="index.html">&lt;&nbsp;TRPGtools一覧に移動</a><br>
+        </footer>
+        <script type="text/javascript" src="randomchara.js"></script>
+    </body>
+</html>

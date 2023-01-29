@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>任意Rotツール - UekiWT</title>
+        <link rel="stylesheet" href="rotn.css">
+    </head>
+    <body>
+        <h2 class="center">アルファベットの任意Rotツール</h2>
+        <p class="center">
+            <b>既定値</b>　n：<b>0</b><br>
+            nが負の場合も動作します
+        </p>
+
+        <p id="settings">
+            <input type="text" id="n" name="n" placeholder="n" oninput="changesentence()" class="setting">
+        </p>
+    
+        <p id="rotn">
+            <textarea id="sentence" name="sentence" rows="4" cols="40" placeholder="文を入力してください" oninput="changesentence()"></textarea>
+            <textarea id="result" name="result" rows="4" cols="40" placeholder="結果が出力されます" style="color: #1a1a1a;" disabled></textarea>
+        </p>
+        <footer>
+            <br>
+            <a href="index.html">&lt;&nbsp;webtools一覧に移動</a>
+        </footer>
+        <script type="text/javascript" src="rotn.js"></script>
+    </body>
+</html>
