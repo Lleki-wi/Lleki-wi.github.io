@@ -135,6 +135,9 @@ function changechar() {
                     res += " \\" + mchar + "\\ "
                 }
             } else {
+                if (mchar.match(/["”]/) != null) {
+                    mchar = '゛'
+                }
                 if (typeof Akana_morse[mchar] != "undefined") {
                     res += Akana_morse[mchar].replace(/_/g, long).replace(/\./g, short) + delimiter
                     f = true
