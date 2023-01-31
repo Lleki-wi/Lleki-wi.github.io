@@ -26,9 +26,10 @@
             <input type="text" id="long" name="long" placeholder="長音" oninput="change_set()" class="setting">
             <input type="text" id="short" name="short" placeholder="短音" oninput="change_set()" class="setting">
             <input type="text" id="delimiter" name="delimiter" placeholder="区切り" oninput="change_set()" class="setting">
-            <input type="radio" id="select_alph" name="char_select" value="alph" oninput="change_set()" checked><label for="select_alph">アルファベット</label>
-            <input type="radio" id="select_kana" name="char_select" value="kana" oninput="change_set()" ><label for="select_kana">ひらがな</label>
-            <input type="checkbox" id="capslock_flag" name="capslock_box" oninput="change_set()"><label for="capslock_flag">大文字/カタカナ</label>
+            <nobr><input type="radio" id="select_alph" name="char_select" value="alph" oninput="change_set()" checked><label for="select_alph">アルファベット</label></nobr>
+            <nobr><input type="radio" id="select_kana" name="char_select" value="kana" oninput="change_set()" ><label for="select_kana">ひらがな</label></nobr>
+            <nobr><input type="checkbox" id="capslock_flag" name="capslock_box" oninput="change_set()"><label for="capslock_flag">大文字/カタカナ</label></nobr>
+            <nobr><input type="checkbox" id="kana_correction" name="kana_correction" oninput="change_set()" checked><label for="kana_correction">かな補正</label></nobr>
         </p>
 
         <p id="morse_to_char">
