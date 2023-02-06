@@ -34,14 +34,14 @@
 
         <p id="morse_to_char">
             <h4>モールス信号→アルファベット/ひらがな</h4>
-            <textarea id="input_morse" name="input_morse" rows="6" cols="55" placeholder="指定した文字でモールス信号を入力してください" oninput="changemorse()"></textarea>
-            <textarea id="output_char" name="output_char" rows="6" cols="55" placeholder="結果が出力されます" style="color: #1a1a1a;" disabled></textarea>
+            <textarea id="input_morse" name="input_morse" class="in_output" placeholder="指定した文字でモールス信号を入力してください" oninput="changemorse()"></textarea>
+            <textarea id="output_char" name="output_char" class="in_output" placeholder="結果が出力されます" style="color: #1a1a1a;" disabled></textarea>
         </p>
 
         <p id="char_to_morse">
             <h4>アルファベット/ひらがな→モールス信号</h4>
-            <textarea id="input_char" name="input_char" rows="6" cols="55" placeholder="文字列を入力してください" oninput="changechar()"></textarea>
-            <textarea id="output_morse" name="output_morse" rows="6" cols="55" placeholder="結果が出力されます" style="color: #1a1a1a;" disabled></textarea>
+            <textarea id="input_char" name="input_char" class="in_output" placeholder="文字列を入力してください" oninput="changechar()"></textarea>
+            <textarea id="output_morse" name="output_morse" class="in_output" placeholder="結果が出力されます" style="color: #1a1a1a;" disabled></textarea>
             </p>
         <footer>
             <br>

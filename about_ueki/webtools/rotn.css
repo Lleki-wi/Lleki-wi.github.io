@@ -12,3 +12,8 @@ html, body {
     height: 25px;
     text-align: center;
 }
+.in_output {
+    max-width: 100%;
+    width: 300px;
+    height: 80px;
+}

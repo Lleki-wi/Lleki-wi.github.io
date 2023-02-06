@@ -43,3 +43,8 @@ button {
     text-align: center;
     color: #1a1a1a;
 }
+.log {
+    max-width: 100%;
+    width: 1000px;
+    height: 200px;
+}

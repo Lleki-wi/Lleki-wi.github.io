@@ -13,6 +13,7 @@ html, body {
     text-align: center;
 }
 .in_output {
-    width: 500px;
-    height: 200px;
+    max-width: 100%;
+    width: 1000px;
+    height: 100px;
 }
