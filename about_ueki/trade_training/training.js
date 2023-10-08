@@ -1,3 +1,11 @@
+/*
+LICENCE : MIT
+
+Copyright © 2023 Ll_e_ki
+
+https://opensource.org/license/mit/
+*/
+
 const STARTMENU = 0
 const TRAINING = 1
 

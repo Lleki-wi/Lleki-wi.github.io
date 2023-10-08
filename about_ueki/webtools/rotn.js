@@ -1,3 +1,11 @@
+/*
+LICENCE : MIT
+
+Copyright © 2023 Ll_e_ki
+
+https://opensource.org/license/mit/
+*/
+
 function changesentence() {
     let sentence = document.getElementById("sentence").value
     let n = Number(document.getElementById("n").value)

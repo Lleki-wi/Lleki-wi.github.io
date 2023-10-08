@@ -1,3 +1,11 @@
+/*
+LICENCE : MIT
+
+Copyright © 2023 Ll_e_ki
+
+https://opensource.org/license/mit/
+*/
+
 function getParam(name) {
     let url = window.location.href;
     name = name.replace(/[\[\]]/g, "\\$&");

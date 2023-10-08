@@ -1,4 +1,62 @@
+/*
+LICENCE : MIT
+
+Copyright © 2023 みど
+
+https://opensource.org/license/mit/
+*/
+
 html,body{
-    font-family: "Hiragino Sans","ヒラギノ角ゴシック"; font-weight: 900;
+    font-family: "","",; font-weight: 900px; color: #ffffff;
     text-align: center;
+    background-color: #00c076;
+}
+
+.wrap{
+  margin-bottom: 60px;
+  height:100px;
+}
+
+.box{
+  display:inline-block;
+  text-align:center;
+  width: 400px;
+  height:100px;
+}
+
+h1{
+  font-size: 100px;
+  color: #ff0051;
+  text-shadow:1px 1px 0 #FFF, -1px -1px 0 #FFF,
+            -1px 1px 0 #FFF, 1px -1px 0 #FFF,
+            0px 1px 0 #FFF,  0-1px 0 #FFF,
+            -2px 0 0 #FFF, 2px 0 0 #FFF;
+  margin: -0em 0px;
+}
+
+h2{
+  font-size: 40px;
+  color: #fff200;
+  margin: -0em 0px;
+}
+
+h3{
+  font-size: 20px;
+  margin: -0em 0px;
+}
+
+a {
+  word-wrap: break-word;
+}
+
+.box4 {
+  height: 500px;
+}
+
+#kadomaru {
+  padding: 50px;
+  margin-right: min(200px, 15%);
+  margin-left: min(200px, 15%);
+  border-radius: 50px;
+  background: #ffffff
 }
