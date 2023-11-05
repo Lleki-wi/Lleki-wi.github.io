@@ -1,0 +1,67 @@
+<!--
+LICENCE : MIT
+
+Copyright © 2023 Ll_e_ki
+
+https://opensource.org/license/mit/
+-->
+
+<html>
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>上田銀行トップページ</title>
+        <link rel="icon" href="images/uedabank_logo.png">
+    </head>
+    <style>
+        .mincho {
+            font-family: "游明朝", "Yu Mincho" , YuMincho, serif;
+        }
+        .ueda_ginkooo {
+            margin-top: -20px;
+            margin-bottom: -50px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 25px;
+            width: 750px;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+        .annsinn_money {
+            margin-left: auto;
+            margin-right: auto;
+            background: lime;
+            padding: 5px;
+            width: 750px;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+    </style>
+    <body style="font-family: 'メイリオ', 'Meiryo', sans-serif; font-size: 50px; margin: 2vw;">
+        <div style="margin: -2vw; background: limegreen;">
+            <div class="ueda_ginkooo">
+                <nobr>
+                    <img src="images/uedabank_whitelogo.png" alt="character" width="130px" height="130px" style="line-height: 180px; position: absolute; top: calc(20px + 15px); left: calc(50% - 335px);">
+                    <h1 style="margin: 0 auto;" class="mincho">上田銀行</h1>
+                </nobr>
+            </div>
+        </div>
+        <p style="float: right; margin-right: 20%">
+            <button id="account_opening_button" onclick="location.href='#'" style="margin-right: 10px;">口座開設</button>
+            <button id="login_button" onclick="location.href='#'" style="margin-right: 10px;">ログイン</button>
+            <button id="customer_page_button" onclick="customer_page()">マイページ</button>
+        </p>
+        <br>
+        <br>
+        <br>
+        <div class="annsinn_money">
+            <h1 style="margin: 0 auto; line-height: 160px;">金！安心！</h1>
+            <img src="images/character.png" alt="character" width="185px" height="185px" style="line-height: 160px; position: absolute; right: 5px;">
+        </div>
+        <footer>
+            <br>
+        </footer>
+        <script type="text/javascript" src="index.js"></script>
+    </body>
+</html>

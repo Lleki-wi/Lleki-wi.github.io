@@ -175,8 +175,8 @@ let texts = [
     [5000, 7],
     [525, 3],
     ["works\n", 1],
-    ["index TRPGtools webtools trade training\nQiita Greasy Fork GitHub AtCoder", 4,
-    "index", "works", "\n", 0x0a, "webtools", "webtools", " ", 0, "TRPGtools", "trpgtools", " ", 0, "trade training", "trade_training/training", "\n", 0x0a,
+    ["index TRPGtools webtools trade training UekiCTF\nQiita Greasy Fork GitHub AtCoder", 4,
+    "index", "works", "\n", 0x0a, "webtools", "webtools", " ", 0, "TRPGtools", "trpgtools", " ", 0, "trade training", "trade_training/training", " ", 0,  "UekiCTF", "uekictf", "\n", 0x0a,
     "Qiita", "https://qiita.com/Ll_e_ki", " ", 0, "Greasy Fork", "https://greasyfork.org/ja/users/796821-ll-e-ki", " ", 0, "GitHub", "https://github.com/Lleki-wi?tab=repositories", " ", 0, "AtCoder", "https://atcoder.jp/users/Ll_e_ki", "\n", 0x0a
     ],
     ["\n", 5],
