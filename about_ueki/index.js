@@ -11,6 +11,7 @@ const UNDER = document.createTextNode("_")
 const DELAY_SCALE = 0.6
 const ONEWEEK = 1000*60*60*24*7*1
 
+/*
 function cookieparse() {
     let cookie = document.cookie
     if (cookie == "") {
@@ -26,6 +27,7 @@ function cookieparse() {
 
     return ret
 }
+*/
 
 async function typing(a, ms) {
     await new Promise(s => setTimeout(s, ms * DELAY_SCALE))
@@ -196,6 +198,7 @@ let texts = [
 let shell = document.getElementById("terminal")
 shell.textContent = ""
 
+/*
 let parsedcookie = cookieparse()
 let last_access = 0
 if (parsedcookie["last_access"] != undefined) {
@@ -213,3 +216,4 @@ try {
     typeabout()
 }
 document.cookie = "last_access=" + Date.now()
+*/
