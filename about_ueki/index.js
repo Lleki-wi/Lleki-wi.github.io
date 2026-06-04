@@ -197,6 +197,7 @@ let texts = [
 ]
 let shell = document.getElementById("terminal")
 shell.textContent = ""
+typeabout()
 
 /*
 let parsedcookie = cookieparse()
